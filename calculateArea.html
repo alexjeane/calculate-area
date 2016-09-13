@@ -1,0 +1,29 @@
+<script>
+
+var sides = prompt("How many sides are there?", "");
+sides = testIfNumber(sides, "sides.");
+var sideNumber = 0;
+var sideValue = 0;
+var area = 1; // Initialize variable so JS knows it is a number.
+
+
+for (var i = 0; i < sides; i++)
+{
+	sideNumber = i+1;
+    sideValue = prompt("What's the length of side " + sideNumber + "?", "");
+    sideValue = testIfNumber(sideValue, "length of the side.");
+    area = area * sideValue;  
+}
+
+document.write("The area is " + area + ".");
+
+function testIfNumber(input, word)
+{
+	while(isNaN(input) == true)
+	{
+		var input = prompt("Do not enter a letter!\n" + "Enter a number for the " + word, "");
+	}
+	return input;
+}
+
+</script>
